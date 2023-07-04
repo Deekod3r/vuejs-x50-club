@@ -31,14 +31,19 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
+  <input type="text" id="test" class="form-control">
 </template>
 
 <script>
+import $ from "jquery";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  created() {
+    $("#test").val("haha")
+  }   
 }
 </script>
 
