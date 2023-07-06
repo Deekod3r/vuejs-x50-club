@@ -1,17 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from '../views/Index.vue'
+import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import OurTeam from '../views/OurTeam.vue'
-import Project from '../views/Project.vue' 
+import News from '../views/News.vue' 
 import Service from '../views/Service.vue'
 import Testimonial from '../views/Testimonial.vue' 
 import Contact from '../views/Contact.vue'
 import NotFound404 from '../views/errors/NotFound404.vue'
+import Login from '../views/Login.vue'
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Index,
+    component: Home,
     meta: { 
       title: 'Home' 
     }
@@ -33,11 +34,11 @@ const routes = [
     }
   },
   {
-    path: '/project',
-    name: 'project',
-    component: Project,
+    path: '/news',
+    name: 'news',
+    component: News,
     meta: { 
-      title: 'Project' 
+      title: 'News' 
     }
   },
   {
@@ -70,6 +71,14 @@ const routes = [
     component: NotFound404,
     meta: { 
       title: '404 not found' 
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: { 
+      title: 'Login' 
     }
   }
 ]

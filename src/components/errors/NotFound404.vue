@@ -3,14 +3,16 @@
         <!-- <Spinner/> -->
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class="container position-relative p-0">
+
             <StudentNavbar/>
-            <div class="container-xxl py-5 bg-primary hero-header">
+            
+            <div class="container py-3 bg-primary hero-header">
                 <div class="container my-5 py-5 px-lg-5">
-                    <div class="row g-5 py-5">
+                    <div class="row g-5 py-3">
                         <div class="col-12 text-center">
                             <h1 class="text-white animated slideInDown">Not Found</h1>
-                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <!-- <hr class="bg-white mx-auto mt-0" style="width: 90px;"> -->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
