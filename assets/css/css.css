@@ -1,0 +1,29 @@
+.go-to-home:hover {
+    color: var(--secondary) !important;
+}
+
+.news {
+    height: 230px;
+}
+
+.department {
+    height: 200px;
+}
+
+.club {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.linked {
+    text-decoration: underline;
+}
+
+.x50 {
+    color: #1A4DA1;
+    -webkit-text-stroke: 1px white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.activity {
+    height: 250px;
+}
