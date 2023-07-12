@@ -33,20 +33,10 @@ export default {
     
   },
   methods: {
-    handleScroll (event) {
-      if (window.scrollTop() > 100) {
-          $('.back-to-top').fadeIn('slow');
-      } else {
-          $('.back-to-top').fadeOut('slow');
-      }
-    }
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
-
   },
   mounted() {
-    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
