@@ -1,0 +1,4 @@
+git init
+git add -A
+git commit -m "deploy"
+git push -f https://github.com/Uoptsuu/vuejs-x50-club.git master:gh-pages

@@ -8,7 +8,6 @@ import Testimonial from '../views/Testimonial.vue'
 import Contact from '../views/Contact.vue'
 import NotFound404 from '../views/errors/NotFound404.vue'
 import Login from '../views/Login.vue'
-BASE_URL = window.location.origin;
 const routes = [
   {
     path: '/',
