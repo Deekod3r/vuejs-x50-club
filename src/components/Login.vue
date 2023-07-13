@@ -22,19 +22,19 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
-                        <div class="wow fadeInUp" data-wow-delay="0.3s">
-                            <form>
+                        <div class="wow fadeInUp mb-3" data-wow-delay="0.3s">
+                            <form @submit.prevent="login()">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="username" placeholder="Username">
-                                            <label for="name">Tài khoản</label>
+                                            <input v-model="admin.adminAccount" type="text" class="form-control" id="adminAccount" name="adminAccount" placeholder="Username">
+                                            <label for="adminAccount">Tài khoản</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="password" placeholder="Username">
-                                            <label for="email">Mật khẩu</label>
+                                            <input v-model="admin.adminPassword" type="text" class="form-control" id="adminPassword" name="adminPassword" placeholder="Username">
+                                            <label for="adminPassword">Mật khẩu</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -42,6 +42,9 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="alert" :class="{ 'alert-danger': danger }" role="alert" :style="{ display }">
+                           {{ message }}
                         </div>
                     </div>
                 </div>
@@ -60,7 +63,7 @@
 import Spinner from './shared/Spinner.vue';
 import StudentFooter from './layouts/StudentFooter.vue';
 import GoToTop from './shared/GoToTop.vue';
-
+import AdminService from '../services/admin.js'
 export default {
     name: 'Login',
     components: {
@@ -68,7 +71,56 @@ export default {
         StudentFooter,
         GoToTop
     },
+    data(){
+        return {
+            admin: {
+                adminAccount: '',
+                adminPassword: '',
+            },
+            danger: false,
+            message: '',
+            display: 'none'
+        }
+    },
     methods: {
+        login(){
+            if (this.admin.adminAccount != "" && this.admin.adminPassword != "") {
+                AdminService.login(this.admin) 
+                    .then((res) => {
+                        if (res.data.responseCode == "01") {
+                            alert("Success");
+                        } else {
+                            this.display = 'block';
+                            this.danger = true;
+                            this.message = res.data.responseMessage;
+                            setTimeout(() => {
+                                this.display = 'none';
+                                this.danger = false;
+                                this.message = '';
+                            }, 3000);
+                        }
+                    })
+                .catch((err) => {
+                    this.display = 'block';
+                    this.danger = true;
+                    this.message = 'Có lỗi xảy ra, vui lòng thử lại sau ít phút. Chi tiết lỗi: ' + err;
+                    setTimeout(() => {
+                        this.display = 'none';
+                        this.danger = false;
+                        this.message = '';
+                    }, 3000);
+                })
+            } else {
+                this.display = 'block';
+                this.danger = true;
+                this.message = 'Vui lòng điền đầy đủ thông tin';
+                setTimeout(() => {
+                    this.display = 'none';
+                    this.danger = false;
+                    this.message = '';
+                }, 3000);
+            }
+        }
     },
     created() {
         document.title = 'Đăng nhập';

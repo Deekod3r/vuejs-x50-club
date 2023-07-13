@@ -5,7 +5,7 @@ import router from './router'
 import store from './store'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import OwlCarousel from 'v-owl-carousel'
-
+import './services/configAxios.js'
 
 createApp(App)
     .use(store)

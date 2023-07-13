@@ -8,6 +8,7 @@ import Testimonial from '../views/Testimonial.vue'
 import Contact from '../views/Contact.vue'
 import NotFound404 from '../views/errors/NotFound404.vue'
 import Login from '../views/Login.vue'
+import AdminInsert from '../views/admin/AdminInsert.vue'
 const routes = [
   {
     path: '/',
@@ -79,6 +80,14 @@ const routes = [
     component: Login,
     meta: { 
       title: 'Login' 
+    }
+  },
+  {
+    path: '/admin/insert',
+    name: 'admin-insert',
+    component: AdminInsert,
+    meta: { 
+      title: 'Insert admin' 
     }
   }
 ]
