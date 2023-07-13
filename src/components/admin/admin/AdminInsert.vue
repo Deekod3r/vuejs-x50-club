@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import Spinner from '../../shared/Spinner.vue';
+import Spinner from '../../shared/Spinner.vue';
 import AdminService from '../../../services/admin.js'
 export default {
     name: 'AdminInsert',
@@ -28,7 +28,7 @@ export default {
         
     },
     components: {
-        // Spinner
+        Spinner
     },
     methods: {
         insert(){

@@ -64,6 +64,8 @@ import Spinner from './shared/Spinner.vue';
 import StudentFooter from './layouts/StudentFooter.vue';
 import GoToTop from './shared/GoToTop.vue';
 import AdminService from '../services/admin.js'
+import func from '../shared/func.js'
+import responseCode from '../shared/responseCode.js';
 export default {
     name: 'Login',
     components: {
@@ -87,8 +89,8 @@ export default {
             if (this.admin.adminAccount != "" && this.admin.adminPassword != "") {
                 AdminService.login(this.admin) 
                     .then((res) => {
-                        if (res.data.responseCode == "01") {
-                            alert("Success");
+                        if (res.data.responseCode == responseCode.success) {
+                            this.$router.push("/manage");
                         } else {
                             this.display = 'block';
                             this.danger = true;
@@ -127,4 +129,3 @@ export default {
     }
 }
 </script>
-

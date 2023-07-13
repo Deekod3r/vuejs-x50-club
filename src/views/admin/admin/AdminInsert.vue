@@ -3,7 +3,7 @@
 </template>
   
 <script>
-import AdminInsert from '../../components/admin/admin/AdminInsert.vue';
+import AdminInsert from '../../../components/admin/admin/AdminInsert.vue';
 export default {
     name: 'AdminInsertPage',
     components: {
